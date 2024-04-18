@@ -1,6 +1,6 @@
 *DS_Store*
 .vscode/*
-scenarios/results/simresults/
+scenarios/results/simresults
 omnetpp-5.6.2/
 .cmdenv-log
 .qtenvrc

@@ -8,18 +8,6 @@ import os
 from matplotlib.patches import Patch
 
 # Set matplotlib to use LaTeX for rendering text
-# plt.rcParams["text.usetex"] = True
-
-# # Increase the font size for different elements
-# plt.rcParams["text.usetex"] = False
-# plt.rcParams["font.size"] = 22  # Main font size for titles, labels, etc.
-# plt.rcParams["axes.titlesize"] = 22  # Font size of plot titles
-# plt.rcParams["axes.labelsize"] = 22  # Font size of axis labels
-# plt.rcParams["xtick.labelsize"] = 18  # Font size of x-axis tick labels
-# plt.rcParams["ytick.labelsize"] = 18  # Font size of y-axis tick labels
-# plt.rcParams["legend.fontsize"] = 18  # Font size of legends
-# plt.rcParams['text.latex.preamble'] = r'\usepackage{amsmath}\usepackage{mathastext}'
-
 plt.rcParams.update({
     'font.family': 'lmodern',
     # "font.serif": 'Times',

@@ -72,11 +72,11 @@ GREEDY_FORWARDING_RANDOM_m_6 = greedy-forwarding-random-m-6
 # Create a symbolic link named 'results' to the directory on an HPC cluster where simulation results are stored.
 # This target checks if a file or link named 'results' already exists to avoid overwriting or duplicating links.
 result-directory-hpc:
-	@if [ ! -L results ] && [ ! -e results ]; then \
-		ln -s /path/to/your/hpc/results/directory results; \
-		echo "Symbolic link created to HPC results directory."; \
+	@if [ ! -L simresults ] && [ ! -e simresults ]; then \
+		ln -s /path/to/your/hpc/results/directory simresults; \
+		echo "Symbolic link created to HPC simresults directory."; \
 	else \
-		echo "The symbolic link 'results' already exists or the name is used by another file."; \
+		echo "The symbolic link 'simresults' already exists or the name is used by another file."; \
 	fi
 
 # Run the greedy-forwarding communication range simulation on local PC.
@@ -89,7 +89,7 @@ greedy-forwarding-equipageFraction-A2G-debug:
 
 # Generate CSV files from results of the greedy-forwarding communication range simulation.
 greedy-forwarding-equipageFraction-A2G_csv:
-	cd simresults/scenario_EquipageFraction/$(GREEDY_FORWARDING)/; \
+	cd simresults/scenario_EquipageFraction/$(GREEDY_FORWARDING); \
 	echo -e "Generate csv files for greedy-forwarding scenario"; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:count")' -o packet_sent_count_multiapp.csv numAircrafts\=*.sca; \
 	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("packetReceived:count")' -o packet_received_count.csv numAircrafts\=*.sca; \
@@ -109,7 +109,7 @@ greedy-forwarding-equipageFraction-fft-m-4-A2G-debug:
 
 # Generate CSV files from results of the greedy-forwarding using FFT with m=4 equipage fraction simulation.
 greedy-forwarding-equipageFraction-fft-m-4-A2G_csv:
-	cd simresults/scenario_EquipageFraction/$(GREEDY_FORWARDING_FFT_m_4)/; \
+	cd simresults/scenario_EquipageFraction/$(GREEDY_FORWARDING_FFT_m_4); \
 	echo -e "Generate csv files for greedy-forwarding scenario"; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:count")' -o packet_sent_count_multiapp.csv numAircrafts\=*.sca; \
 	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("packetReceived:count")' -o packet_received_count.csv numAircrafts\=*.sca; \
@@ -129,7 +129,7 @@ greedy-forwarding-equipageFraction-efft-m-4-A2G-debug:
 
 # Generate CSV files from results of the greedy-forwarding using EFFT with m=4 equipage fraction simulation.
 greedy-forwarding-equipageFraction-efft-m-4-A2G_csv:
-	cd simresults/scenario_EquipageFraction/$(GREEDY_FORWARDING_EFFT_m_4)/; \
+	cd simresults/scenario_EquipageFraction/$(GREEDY_FORWARDING_EFFT_m_4); \
 	echo -e "Generate csv files for greedy-forwarding scenario"; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:count")' -o packet_sent_count_multiapp.csv numAircrafts\=*.sca; \
 	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("packetReceived:count")' -o packet_received_count.csv numAircrafts\=*.sca; \
@@ -148,8 +148,9 @@ greedy-forwarding-equipageFraction-random-m-4-A2G-debug:
 	gdbgui --args $(SIM_BINARY_DBG) ../scenario_equipage_fraction.ini -u Cmdenv -c $(GREEDY_FORWARDING_RANDOM_m_4) $(INCL)
 
 # Generate CSV files from results of the greedy-forwarding using Random with m=4 equipage fraction simulation.
+
 greedy-forwarding-equipageFraction-random-m-4-A2G_csv:
-	cd simresults/scenario_EquipageFraction/$(GREEDY_FORWARDING_RANDOM_m_4)/; \
+	cd simresults/scenario_EquipageFraction/$(GREEDY_FORWARDING_RANDOM_m_4); \
 	echo -e "Generate csv files for greedy-forwarding scenario"; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:count")' -o packet_sent_count_multiapp.csv numAircrafts\=*.sca; \
 	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("packetReceived:count")' -o packet_received_count.csv numAircrafts\=*.sca; \
@@ -169,7 +170,7 @@ greedy-forwarding-equipageFraction-fft-m-6-A2G-debug:
 
 # Generate CSV files from results of the greedy-forwarding using FFT with m=6 equipage fraction simulation.
 greedy-forwarding-equipageFraction-fft-m-6-A2G_csv:
-	cd simresults/scenario_EquipageFraction/$(GREEDY_FORWARDING_FFT_m_6)/; \
+	cd simresults/scenario_EquipageFraction/$(GREEDY_FORWARDING_FFT_m_6); \
 	echo -e "Generate csv files for greedy-forwarding scenario"; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:count")' -o packet_sent_count_multiapp.csv numAircrafts\=*.sca; \
 	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("packetReceived:count")' -o packet_received_count.csv numAircrafts\=*.sca; \
@@ -189,7 +190,7 @@ greedy-forwarding-equipageFraction-efft-m-6-A2G-debug:
 
 # Generate CSV files from results of the greedy-forwarding using EFFT with m=6 equipage fraction simulation.
 greedy-forwarding-equipageFraction-efft-m-6-A2G_csv:
-	cd simresults/scenario_EquipageFraction/$(GREEDY_FORWARDING_EFFT_m_6)/; \
+	cd simresults/scenario_EquipageFraction/$(GREEDY_FORWARDING_EFFT_m_6); \
 	echo -e "Generate csv files for greedy-forwarding scenario"; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:count")' -o packet_sent_count_multiapp.csv numAircrafts\=*.sca; \
 	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("packetReceived:count")' -o packet_received_count.csv numAircrafts\=*.sca; \
@@ -209,7 +210,7 @@ greedy-forwarding-equipageFraction-random-m-6-A2G-debug:
 
 # Generate CSV files from results of the greedy-forwarding using Random with m=6 equipage fraction simulation.
 greedy-forwarding-equipageFraction-random-m-6-A2G_csv:
-	cd simresults/scenario_EquipageFraction/$(GREEDY_FORWARDING_RANDOM_m_6)/; \
+	cd simresults/scenario_EquipageFraction/$(GREEDY_FORWARDING_RANDOM_m_6); \
 	echo -e "Generate csv files for greedy-forwarding scenario"; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:count")' -o packet_sent_count_multiapp.csv numAircrafts\=*.sca; \
 	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("packetReceived:count")' -o packet_received_count.csv numAircrafts\=*.sca; \
@@ -220,21 +221,40 @@ greedy-forwarding-equipageFraction-random-m-6-A2G_csv:
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("hopCount:vector")' -o hop_count_vector.csv numAircrafts\=*.vec
 
 # Run all simulations from the HPC cluster command range.
-run-all-simulations-from-hpc-commRange:
+run-all-simulations-from-hpc-equipageFraction:
 	sbatch scripts/s_greedy_equipage_fraction.sh; \
-	sleep 300; \
+	# sleep 300; \
 	sbatch scripts/s_greedyFFT_m_4_equipage_fraction.sh; \
-	sleep 500; \
+	# sleep 500; \
 	sbatch scripts/s_greedyEFFT_m_4_equipage_fraction.sh; \
-	sleep 300; \
+	# sleep 300; \
 	sbatch scripts/s_greedyRandom_m_4_equipage_fraction.sh; \
-	sleep 300; \
+	# sleep 300; \
 	sbatch scripts/s_greedyFFT_m_6_equipage_fraction.sh; \
-	sleep 300; \
+	# sleep 300; \
 	sbatch scripts/s_greedyEFFT_m_6_equipage_fraction.sh; \
-	sleep 300; \
+	# sleep 300; \
 	sbatch scripts/s_greedyRandom_m_6_equipage_fraction.sh 
+
+# This target aggregates the generation of all CSV files for different configurations of the equipage fraction simulations.
+random-generate-all-equipageFraction-csv: greedy-forwarding-equipageFraction-A2G_csv greedy-forwarding-equipageFraction-fft-m-4-A2G_csv greedy-forwarding-equipageFraction-efft-m-4-A2G_csv greedy-forwarding-equipageFraction-random-m-4-A2G_csv greedy-forwarding-equipageFraction-fft-m-6-A2G_csv greedy-forwarding-equipageFraction-efft-m-6-A2G_csv greedy-forwarding-equipageFraction-random-m-6-A2G_csv
+
+# This target removes all non-CSV files from the simulation results directory for the equipage fraction scenarios,
+# ensuring that only CSV files are retained for data analysis and storage efficiency.
+random-remove-collected-result-files-all-equipageFraction:
+	find ./simresults/scenario_EquipageFraction/../ -type f ! -name "*.csv" -exec rm {} +
 
 # Run simulations to calculate the average number of unique k-hop neighbors from the local PC.
 run-average-khop-neighbors-simulations:
 	pipenv run python3 scripts/py_AvgUniqueNeioghbors.py
+
+# This target runs Python scripts to generate plots for the Packet Delivery Ratio (PDR) and Hop Count (HC) 
+# for the Equipage Fraction scenario. Each script processes simulation data to produce visualizations.
+plot-equipage-fraction-metrics: run-pdr-plot run-hc-plot
+
+run-pdr-plot:
+	pipenv run python3 scripts/py_scenario_EquipageFraction_pdr.py
+
+
+run-hc-plot:
+	pipenv run python3 scripts/py_scenario_EquipageFraction_hc.py

@@ -13,8 +13,6 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-// package greedy_forwarding.simulations;
-
 import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
 import inet.node.inet.ManetRouter;
 import inet.node.inet.StandardHost;
