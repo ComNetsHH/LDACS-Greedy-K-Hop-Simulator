@@ -20,9 +20,9 @@ NUM_CPUS=10  # set to your no. of cores
 LOC_OMNET=https://github.com/omnetpp/omnetpp/releases/download/omnetpp-5.6.2/omnetpp-5.6.2-src-linux.tgz
 LOC_OMNET_MAC=https://github.com/omnetpp/omnetpp/releases/download/omnetpp-5.6.2/omnetpp-5.6.2-src-macosx.tgz
 LOC_INET=https://github.com/eltayebmusab/inet/archive/refs/tags/v4.2.5.tar.gz
-LOC_RADIO=https://github.com/ComNetsHH/LDACS-Abstract-Radio/archive/refs/tags/ldacs_abstract_radio-v1.0.0.zip
-LOC_TDMA=https://github.com/ComNetsHH/LDACS-Abstract-TDMA-MAC/archive/refs/tags/ldacs_abstract_tdma-v1.0.0.zip
-LOC_GREEDY_ROUTING=https://github.com/ComNetsHH/LDACS-Greedy-K-Hop-Routing/archive/refs/tags/ldacs_greedy_k_hop_routing-v1.0.0.zip
+LOC_RADIO=https://github.com/ComNetsHH/LDACS-Abstract-Radio/archive/refs/tags/ldacs_abstract_radio-v1.0.1.zip
+LOC_TDMA=https://github.com/ComNetsHH/LDACS-Abstract-TDMA-MAC/archive/refs/tags/ldacs_abstract_tdma-v1.0.1.zip
+LOC_GREEDY_ROUTING=https://github.com/ComNetsHH/LDACS-Greedy-K-Hop-Routing/archive/refs/tags/ldacs_greedy_k_hop_routing-v1.0.1.zip
 # Download OMNeT++ v5.6.2, unpack and go to directory.
 echo -n "Downloading OMNeT++ "
 if [ $1 = "mac" ]; then
@@ -69,11 +69,11 @@ echo -e "\n\nDownloading LDACS Abstract Radio"
 mkdir ldacs_abstract_radio
 wget $LOC_RADIO
 umask 000
-unzip ldacs_abstract_radio-v1.0.0.zip -d tmp_extract
+unzip ldacs_abstract_radio-v1.0.1.zip -d tmp_extract
 mv tmp_extract/*/* ldacs_abstract_radio/
 mv tmp_extract/*/.* ldacs_abstract_radio/
 rm -r tmp_extract
-rm -r ldacs_abstract_radio-v1.0.0.zip
+rm -r ldacs_abstract_radio-v1.0.1.zip
 cd ldacs_abstract_radio/src
 opp_makemake -f -s --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../inet4 -I. -I../../inet4/src -L../../inet4/src -lINET 
 # opp_makemake -f -s --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../inet4 -I. -I../../inet4/src -L../../inet4/src -lINET_dbg
@@ -86,11 +86,11 @@ echo -e "\n\nDownloading LDACS Abstract TDMA MAC"
 mkdir ldacs_abstract_tdma_mac
 wget $LOC_TDMA
 umask 000
-unzip ldacs_abstract_tdma-v1.0.0.zip -d tmp_extract
+unzip ldacs_abstract_tdma-v1.0.1.zip -d tmp_extract
 mv tmp_extract/*/* ldacs_abstract_tdma_mac/
 mv tmp_extract/*/.* ldacs_abstract_tdma_mac/
 rm -r tmp_extract
-rm -r ldacs_abstract_tdma-v1.0.0.zip
+rm -r ldacs_abstract_tdma-v1.0.1.zip
 cd ldacs_abstract_tdma_mac/src
 opp_makemake -f -s --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../ldacs_abstract_radio/src -I. -I../../inet4/src -L../../inet4/src -L../../ldacs_abstract_radio/out/gcc-release/src/ -lINET -lldacs_abstract_radio
 # opp_makemake -f -s --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../ldacs_abstract_radio/src -I. -I../../inet4/src -L../../inet4/src -L../../ldacs_abstract_radio/out/gcc-release/src/ -lINET_dbg -lldacs_abstract_radio_dbg
@@ -103,11 +103,11 @@ echo -e "\n\nDownloading LDACS-Greedy-K-Hop-Routing"
 mkdir ldacs_greedy_k_hop_routing
 wget $LOC_GREEDY_ROUTING
 umask 000
-unzip ldacs_greedy_k_hop_routing-v1.0.0.zip -d tmp_extract
+unzip ldacs_greedy_k_hop_routing-v1.0.1.zip -d tmp_extract
 mv tmp_extract/*/* ldacs_greedy_k_hop_routing/
 mv tmp_extract/*/.* ldacs_greedy_k_hop_routing/
 rm -r tmp_extract
-rm -r ldacs_greedy_k_hop_routing-v1.0.0.zip
+rm -r ldacs_greedy_k_hop_routing-v1.0.1.zip
 cd ldacs_greedy_k_hop_routing/src
 opp_makemake -f -s --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../inet4 -I../../ldacs_abstract_radio/src -I../../ldacs_abstract_tdma_mac/src -I. -I../../inet4/src -L../../inet4/src -L../../ldacs_abstract_radio/out/gcc-release/src/ -L../../ldacs_abstract_tdma_mac/out/gcc-release/src/ -lINET -lldacs_abstract_radio -lldacs_abstract_tdma_mac
 # opp_makemake -f -s --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../inet4 -I../../ldacs_abstract_radio/src -I../../ldacs_abstract_tdma_mac/src -I. -I../../inet4/src -L../../inet4/src -L../../ldacs_abstract_radio/out/gcc-release/src/ -L../../ldacs_abstract_tdma_mac/out/gcc-release/src/ -lINET_dbg -lldacs_abstract_radio_dbg -lldacs_abstract_tdma_mac_dbg
