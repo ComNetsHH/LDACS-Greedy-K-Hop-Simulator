@@ -1,6 +1,6 @@
 # LDACS Greedy k-Hop Simulator Makefile
-# The LDACS Greedy k-Hop simulator includes an installation script that automates the downloading of 
-# components, sets up simulation scenarios, and handles result evaluation and graph generation.
+# The LDACS Greedy k-Hop simulator includes an installation script that automates the downloading  
+# of components, sets up simulation scenarios, and handles result evaluation and graph generation.
 # Copyright (C) 2024 Musab Ahmed, Konrad Fuger, Koojana Koladinithi, Andreas Timm-Giel,
 # Institute of Communication Networks, Hamburg University of Technology, Hamburg, Germany.
 #
