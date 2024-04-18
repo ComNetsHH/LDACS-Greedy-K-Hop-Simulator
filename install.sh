@@ -117,6 +117,5 @@ cd ../..
 
 cd ../../scenarios/results
 echo -e "\n\nInstall python packages into local pipenv environment"
-# make install-python-env
-# echo -e "\n\nAll done! Try it by running the following commands:\ncd scenarios/results\nmake sanity-check\nThis should start simulations and create graphs in the scenarios/results/_imgs/ directory."
-# echo -e "Please make sure that omnetpp-5.6.2/bin is in your PATH!"
+make install-python-env
+

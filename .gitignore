@@ -15,4 +15,6 @@ omnetpp-5.6.2/
 *.log
 *DS_Store*
 .vscode/*
+scenarios/results/slurm*
+scenarios/results/Makefile.*
 
