@@ -3,7 +3,7 @@ from py_performence_evaluation import *
 # Define variables
 variable_values = ['250', '300', '350', '400', '450', '500']
 x_data = [0.5, 0.6, 0.7, 0.8, 0.9, 1]
-no_simulation_runs = 2
+no_simulation_runs = 50
 max_no_of_aircraft = 500
 
 dir_path = './simresults/scenario_EquipageFraction'
