@@ -4,7 +4,7 @@
 
 ## Copyright and License
 
-**Copyright (C) 2024 Musab Ahmed, Konrad Fuger, Koojana Kuladinithi, Andreas Timm-Giel, Institute of Communication Networks, Hamburg University of Technology, Hamburg, Germany**
+**Copyright (C) 2024 Musab Ahmed, Konrad Fuger, Institute of Communication Networks, Hamburg University of Technology, Hamburg, Germany**
 
 This program is free software: you are free to redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
