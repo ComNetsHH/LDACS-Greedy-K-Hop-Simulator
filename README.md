@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10995728.svg)](https://doi.org/10.5281/zenodo.10995728)
+
 # [LDACS-Greedy-K-Hop-Simulator](https://github.com/ComNetsHH/LDACS-Greedy-K-Hop-Simulator)
 
 ## Copyright and License
