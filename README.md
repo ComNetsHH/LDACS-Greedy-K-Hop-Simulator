@@ -1,11 +1,11 @@
 # [LDACS-Greedy-K-Hop-Simulator](https://github.com/ComNetsHH/LDACS-Greedy-K-Hop-Simulator)
 
 ## Overview
-The LDACS-Greedy-K-Hop-Simulator is an open-source toolkit developed to simulate and enhance geographic greedy routing in sparse LDACS air-to-air networks. It specifically simulates the application of a geographic greedy routing protocol that leverages k-hop neighborhood data. The simulator evaluates three distinct methods for selecting k-hop subsets: a random method, Farthest First Traversal (FFT), and Enhanced Farthest First Traversal (EFFT). These methods are tested within simulated French airspace scenarios, allowing for comprehensive analysis of routing efficiency and the impact of different neighbor selection strategies on network performance. The simulation is implemented using OMNeT++ and Python, ensuring detailed and scalable simulation capabilities. Additionally, it is compatible with HPC environments using Slurm, making it suitable for large-scale simulation tasks.
+The LDACS-Greedy-K-Hop-Simulator is an open-source simulation model developed to enhance and evaluate geographic greedy routing in sparse LDACS air-to-air networks. It specifically simulates the application of a geographic greedy routing protocol that leverages k-hop neighborhood information. The simulator evaluates three distinct methods for selecting k-hop subsets: a random method, Farthest First Traversal (FFT), and Enhanced Farthest First Traversal (EFFT). These methods are tested within simulated French airspace scenario, allowing for comprehensive analysis of routing efficiency and the impact of different neighbor selection strategies on network performance. The simulation is implemented using OMNeT++ and Python, ensuring detailed and scalable simulation capabilities. Additionally, it is compatible with HPC environments using Slurm, making it suitable for large-scale simulation tasks.
 
 ## Components
-- **[LDACS Greedy K-Hop Routing](https://github.com/ComNetsHH/LDACS-Greedy-K-Hop-Routing)**: Advanced algorithm for efficient network traffic management in sparse environments.
-- **[LDACS Abstract TDMA MAC](https://github.com/ComNetsHH/LDACS-Abstract-TDMA-MAC)**: Models an LDACS-specific MAC protocol using time-division multiple access.
+- **[LDACS Greedy K-Hop Routing](https://github.com/ComNetsHH/LDACS-Greedy-K-Hop-Routing)**: Implements the greedy routing algorithm with a subset of k-hop neighborhood information for efficient forwarding in sparse environments.
+- **[LDACS Abstract TDMA MAC](https://github.com/ComNetsHH/LDACS-Abstract-TDMA-MAC)**: Models an abstract LDACS air-to-air TDMA-based MAC protocol.
 - **[LDACS Abstract Radio](https://github.com/ComNetsHH/LDACS-Abstract-Radio)**: Abstract model of LDACS radio communications for accurate air-to-air transmission simulation.
 
 ## Installation
