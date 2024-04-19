@@ -1,5 +1,15 @@
 # [LDACS-Greedy-K-Hop-Simulator](https://github.com/ComNetsHH/LDACS-Greedy-K-Hop-Simulator)
 
+## Copyright and License
+
+**Copyright (C) 2024 Musab Ahmed, Konrad Fuger, Koojana Kuladinithi, Andreas Timm-Giel, Institute of Communication Networks, Hamburg University of Technology, Hamburg, Germany**
+
+This program is free software: you are free to redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License along with this program. If not, see [GNU Licenses](https://www.gnu.org/licenses/).
+
 ## Overview
 The LDACS-Greedy-K-Hop-Simulator is an open-source simulation model developed to enhance and evaluate geographic greedy routing in sparse LDACS air-to-air networks. It specifically simulates the application of a geographic greedy routing protocol that leverages k-hop neighborhood information. The simulator evaluates three distinct methods for selecting k-hop subsets: a random method, Farthest First Traversal (FFT), and Enhanced Farthest First Traversal (EFFT). These methods are tested within simulated French airspace scenario, allowing for comprehensive analysis of routing efficiency and the impact of different neighbor selection strategies on network performance. The simulation is implemented using OMNeT++ and Python, ensuring detailed and scalable simulation capabilities. Additionally, it is compatible with HPC environments using Slurm, making it suitable for large-scale simulation tasks.
 
@@ -11,9 +21,9 @@ The LDACS-Greedy-K-Hop-Simulator is an open-source simulation model developed to
 ## Installation
 Clone the repository and set up the simulation environment with the following commands:
 ```bash
-git clone https://github.com/yourusername/LDACS-Greedy-K-Hop-Simulator.git
+git clone https://github.com/ComNetsHH/LDACS-Greedy-K-Hop-Simulator.git
 cd LDACS-Greedy-K-Hop-Simulator
-./install.sh  # Installs all dependencies and sets up necessary submodules
+bash install.sh  # Installs all dependencies and sets up necessary submodules
 ```
 
 ## Configuration of Environment Variables for OMNeT++
