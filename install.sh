@@ -23,7 +23,7 @@ LOC_INET=https://github.com/eltayebmusab/inet/archive/refs/tags/v4.2.5.tar.gz
 LOC_RADIO=https://zenodo.org/records/12826802/files/ComNetsHH/LDACS-Abstract-Radio-v1.0.5.zip
 LOC_TDMA=https://zenodo.org/records/12826801/files/ComNetsHH/LDACS-Abstract-TDMA-MAC-v1.0.5.zip
 LOC_GREEDY_ROUTING=https://zenodo.org/records/12826688/files/ComNetsHH/LDACS-Greedy-K-Hop-Routing-v1.0.5.zip
-LOC_DIJKSTRA_ROUTING=https://zenodo.org/records/12826320/files/ComNetsHH/LDACS-Dijkstra-v1.0.2.zip
+LOC_DIJKSTRA_ROUTING=https://zenodo.org/records/12826320/files/ComNetsHH/LDACS-Dijkstra-v1.0.3.zip
 
 # Download OMNeT++ v5.6.2, unpack and go to directory.
 echo -n "Downloading OMNeT++ "
@@ -122,11 +122,11 @@ echo -e "\n\nDownloading LDACS-Dijkstra"
 mkdir ldacs_dijkstra_routing
 wget $LOC_DIJKSTRA_ROUTING
 umask 000
-unzip LDACS-Dijkstra-v1.0.2.zip -d tmp_extract
+unzip LDACS-Dijkstra-v1.0.3.zip -d tmp_extract
 mv tmp_extract/*/* ldacs_dijkstra_routing/
 mv tmp_extract/*/.* ldacs_dijkstra_routing/
 rm -r tmp_extract
-rm -r LDACS-Dijkstra-v1.0.2.zip
+rm -r LDACS-Dijkstra-v1.0.3.zip
 cd ldacs_dijkstra_routing/src
 opp_makemake -f -s --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../inet4 -I../../ldacs_abstract_radio/src -I../../ldacs_abstract_tdma_mac/src -I. -I../../inet4/src -L../../inet4/src -L../../ldacs_abstract_radio/out/gcc-release/src/ -L../../ldacs_abstract_tdma_mac/out/gcc-release/src/ -lINET -lldacs_abstract_radio -lldacs_abstract_tdma_mac
 # opp_makemake -f -s --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../inet4 -I../../ldacs_abstract_radio/src -I../../ldacs_abstract_tdma_mac/src -I. -I../../inet4/src -L../../inet4/src -L../../ldacs_abstract_radio/out/gcc-release/src/ -L../../ldacs_abstract_tdma_mac/out/gcc-release/src/ -lINET_dbg -lldacs_abstract_radio_dbg -lldacs_abstract_tdma_mac_dbg
