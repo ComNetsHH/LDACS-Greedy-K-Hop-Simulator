@@ -23,6 +23,7 @@ LOC_INET=https://github.com/eltayebmusab/inet/archive/refs/tags/v4.2.5.tar.gz
 LOC_RADIO=https://zenodo.org/records/10995663/files/ComNetsHH/LDACS-Abstract-Radio-ldacs_abstract_radio-v1.0.4.zip
 LOC_TDMA=https://zenodo.org/records/10995658/files/ComNetsHH/LDACS-Abstract-TDMA-MAC-ldacs_abstract_tdma-v1.0.4.zip
 LOC_GREEDY_ROUTING=https://zenodo.org/records/10995656/files/ComNetsHH/LDACS-Greedy-K-Hop-Routing-ldacs_greedy_k_hop_routing-v1.0.4.zip
+LOC_DIJKSTRA_ROUTING=https://zenodo.org/records/10995656/files/ComNetsHH/LDACS-Dijkstra-ldacs_dijkstra_routing-v1.0.0.zip
 # Download OMNeT++ v5.6.2, unpack and go to directory.
 echo -n "Downloading OMNeT++ "
 if [ $1 = "mac" ]; then
@@ -114,6 +115,24 @@ opp_makemake -f -s --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../
 make MODE=release -j$NUM_CPUS
 # make MODE=debug -j$NUM_CPUS
 cd ../..
+
+# Compile LDACS-Dijkstra
+echo -e "\n\nDownloading LDACS-Dijkstra"
+mkdir ldacs_dijkstra_routing
+wget $LOC_DIJKSTRA_ROUTING
+umask 000
+unzip LDACS-Dijkstra_dijkstra_routing-v1.0.0.zip -d tmp_extract
+mv tmp_extract/*/* ldacs_dijkstra_routing/
+mv tmp_extract/*/.* ldacs_dijkstra_routing/
+rm -r tmp_extract
+rm -r LDACS-Dijkstra_dijkstra_routing-v1.0.0.zip
+cd ldacs_dijkstra_routing/src
+opp_makemake -f -s --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../inet4 -I../../ldacs_abstract_radio/src -I../../ldacs_abstract_tdma_mac/src -I. -I../../inet4/src -L../../inet4/src -L../../ldacs_abstract_radio/out/gcc-release/src/ -L../../ldacs_abstract_tdma_mac/out/gcc-release/src/ -lINET -lldacs_abstract_radio -lldacs_abstract_tdma_mac
+# opp_makemake -f -s --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../inet4 -I../../ldacs_abstract_radio/src -I../../ldacs_abstract_tdma_mac/src -I. -I../../inet4/src -L../../inet4/src -L../../ldacs_abstract_radio/out/gcc-release/src/ -L../../ldacs_abstract_tdma_mac/out/gcc-release/src/ -lINET_dbg -lldacs_abstract_radio_dbg -lldacs_abstract_tdma_mac_dbg
+make MODE=release -j$NUM_CPUS
+# make MODE=debug -j$NUM_CPUS
+cd ../..
+
 
 cd ../../scenarios/results
 echo -e "\n\nInstall python packages into local pipenv environment"
