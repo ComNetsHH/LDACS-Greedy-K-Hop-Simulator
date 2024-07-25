@@ -308,10 +308,6 @@ dijkstra-equipageFraction_csv:
 	echo -e "Generate csv files for dijkstra scenario"; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:count")' -o packet_sent_count_multiapp.csv numAircrafts\=*.sca; \
 	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("packetReceived:count")' -o packet_received_count.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:sum(packetBytes)")' -o packet_sentBytes_sum.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("beaconSentBytes:sum")' -o beacon_sentBytes_sum.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("beaconSentCount:count")' -o beacon_sent_count.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("endToEndDelay:vector")' -o e2e_delay_vector.csv numAircrafts\=*.vec; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("hopCount:vector")' -o hop_count_vector.csv numAircrafts\=*.vec
 
 # Run all simulations from the HPC cluster command range.
@@ -320,6 +316,8 @@ run-all-simulations-from-hpc-equipageFraction:
 	sleep 10; \
 	sbatch scripts/s_dijkstra_equipage_fraction.sh; \
 	sleep 600; \
+	make comment-dijkstra; \
+	sleep 10; \
 	sbatch scripts/s_greedy_1hop_equipage_fraction.sh; \
 	# sleep 300; \
 	sbatch scripts/s_greedy_2hop_equipage_fraction.sh; \
