@@ -23,7 +23,7 @@ LOC_INET=https://github.com/eltayebmusab/inet/archive/refs/tags/v4.2.5.tar.gz
 LOC_RADIO=https://zenodo.org/records/12826802/files/ComNetsHH/LDACS-Abstract-Radio-v1.0.5.zip
 LOC_TDMA=https://zenodo.org/records/12826801/files/ComNetsHH/LDACS-Abstract-TDMA-MAC-v1.0.5.zip
 LOC_GREEDY_ROUTING=https://zenodo.org/records/12826688/files/ComNetsHH/LDACS-Greedy-K-Hop-Routing-v1.0.5.zip
-LOC_DIJKSTRA_ROUTING=https://zenodo.org/records/12826320/files/ComNetsHH/LDACS-Dijkstra-v1.0.3.zip
+LOC_DIJKSTRA_ROUTING=https://zenodo.org/records/12827054/files/ComNetsHH/LDACS-Dijkstra-v1.0.3.zip
 
 # Download OMNeT++ v5.6.2, unpack and go to directory.
 echo -n "Downloading OMNeT++ "
