@@ -20,9 +20,9 @@ NUM_CPUS=10  # set to your no. of cores
 LOC_OMNET=https://github.com/omnetpp/omnetpp/releases/download/omnetpp-5.6.2/omnetpp-5.6.2-src-linux.tgz
 LOC_OMNET_MAC=https://github.com/omnetpp/omnetpp/releases/download/omnetpp-5.6.2/omnetpp-5.6.2-src-macosx.tgz
 LOC_INET=https://github.com/eltayebmusab/inet/archive/refs/tags/v4.2.5.tar.gz
-LOC_RADIO=https://zenodo.org/records/10995663/files/ComNetsHH/LDACS-Abstract-Radio-ldacs_abstract_radio-v1.0.4.zip
-LOC_TDMA=https://zenodo.org/records/10995658/files/ComNetsHH/LDACS-Abstract-TDMA-MAC-ldacs_abstract_tdma-v1.0.4.zip
-LOC_GREEDY_ROUTING=https://zenodo.org/records/10995656/files/ComNetsHH/LDACS-Greedy-K-Hop-Routing-ldacs_greedy_k_hop_routing-v1.0.4.zip
+LOC_RADIO=https://zenodo.org/records/10995663/files/ComNetsHH/LDACS-Abstract-Radio-v1.0.5.zip
+LOC_TDMA=https://zenodo.org/records/10995658/files/ComNetsHH/LDACS-Abstract-TDMA-MAC-v1.0.5.zip
+LOC_GREEDY_ROUTING=https://zenodo.org/records/10995656/files/ComNetsHH/LDACS-Greedy-K-Hop-Routing-v1.0.5.zip
 LOC_DIJKSTRA_ROUTING=https://zenodo.org/records/10995656/files/ComNetsHH/LDACS-Dijkstra-v1.0.2.zip
 
 # Download OMNeT++ v5.6.2, unpack and go to directory.
@@ -71,11 +71,11 @@ echo -e "\n\nDownloading LDACS Abstract Radio"
 mkdir ldacs_abstract_radio
 wget $LOC_RADIO
 umask 000
-unzip LDACS-Abstract-Radio-ldacs_abstract_radio-v1.0.4.zip -d tmp_extract
+unzip LDACS-Abstract-Radio-v1.0.5.zip -d tmp_extract
 mv tmp_extract/*/* ldacs_abstract_radio/
 mv tmp_extract/*/.* ldacs_abstract_radio/
 rm -r tmp_extract
-rm -r LDACS-Abstract-Radio-ldacs_abstract_radio-v1.0.4.zip
+rm -r LDACS-Abstract-Radio-v1.0.5.zip
 cd ldacs_abstract_radio/src
 opp_makemake -f -s --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../inet4 -I. -I../../inet4/src -L../../inet4/src -lINET 
 # opp_makemake -f -s --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../inet4 -I. -I../../inet4/src -L../../inet4/src -lINET_dbg
@@ -88,11 +88,11 @@ echo -e "\n\nDownloading LDACS Abstract TDMA MAC"
 mkdir ldacs_abstract_tdma_mac
 wget $LOC_TDMA
 umask 000
-unzip LDACS-Abstract-TDMA-MAC-ldacs_abstract_tdma-v1.0.4.zip -d tmp_extract
+unzip LDACS-Abstract-TDMA-MAC-v1.0.5.zip -d tmp_extract
 mv tmp_extract/*/* ldacs_abstract_tdma_mac/
 mv tmp_extract/*/.* ldacs_abstract_tdma_mac/
 rm -r tmp_extract
-rm -r LDACS-Abstract-TDMA-MAC-ldacs_abstract_tdma-v1.0.4.zip
+rm -r LDACS-Abstract-TDMA-MAC-v1.0.5.zip
 cd ldacs_abstract_tdma_mac/src
 opp_makemake -f -s --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../ldacs_abstract_radio/src -I. -I../../inet4/src -L../../inet4/src -L../../ldacs_abstract_radio/out/gcc-release/src/ -lINET -lldacs_abstract_radio
 # opp_makemake -f -s --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../ldacs_abstract_radio/src -I. -I../../inet4/src -L../../inet4/src -L../../ldacs_abstract_radio/out/gcc-release/src/ -lINET_dbg -lldacs_abstract_radio_dbg
@@ -105,11 +105,11 @@ echo -e "\n\nDownloading LDACS-Greedy-K-Hop-Routing"
 mkdir ldacs_greedy_k_hop_routing
 wget $LOC_GREEDY_ROUTING
 umask 000
-unzip LDACS-Greedy-K-Hop-Routing-ldacs_greedy_k_hop_routing-v1.0.4.zip -d tmp_extract
+unzip LDACS-Greedy-K-Hop-Routing-v1.0.5.zip -d tmp_extract
 mv tmp_extract/*/* ldacs_greedy_k_hop_routing/
 mv tmp_extract/*/.* ldacs_greedy_k_hop_routing/
 rm -r tmp_extract
-rm -r LDACS-Greedy-K-Hop-Routing-ldacs_greedy_k_hop_routing-v1.0.4.zip
+rm -r LDACS-Greedy-K-Hop-Routing-v1.0.5.zip
 cd ldacs_greedy_k_hop_routing/src
 opp_makemake -f -s --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../inet4 -I../../ldacs_abstract_radio/src -I../../ldacs_abstract_tdma_mac/src -I. -I../../inet4/src -L../../inet4/src -L../../ldacs_abstract_radio/out/gcc-release/src/ -L../../ldacs_abstract_tdma_mac/out/gcc-release/src/ -lINET -lldacs_abstract_radio -lldacs_abstract_tdma_mac
 # opp_makemake -f -s --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../inet4 -I../../ldacs_abstract_radio/src -I../../ldacs_abstract_tdma_mac/src -I. -I../../inet4/src -L../../inet4/src -L../../ldacs_abstract_radio/out/gcc-release/src/ -L../../ldacs_abstract_tdma_mac/out/gcc-release/src/ -lINET_dbg -lldacs_abstract_radio_dbg -lldacs_abstract_tdma_mac_dbg
