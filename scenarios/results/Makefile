@@ -118,15 +118,15 @@ result-directory-hpc:
 
 # Uncomment lines in the .ned file related to Dijkstra
 uncomment-dijkstra:
-	@sed -i '/^\/\/ import dspr.Dspr;/s|^\/\/ ||' ../scenarioNAC.ned; \
-	sed -i '/^\/\/ import dspr.NodeManager;/s|^\/\/ ||' ../scenarioNAC.ned; \
-	sed -i 's|^        // nodeManager: NodeManager;|        nodeManager: NodeManager;|' ../scenarioNAC.ned; \
+	@sed -i '/^\/\/ import dspr.Dspr;/s|^\/\/ ||' ../scenario.ned; \
+	sed -i '/^\/\/ import dspr.NodeManager;/s|^\/\/ ||' ../scenario.ned; \
+	sed -i 's|^        // nodeManager: NodeManager;|        nodeManager: NodeManager;|' ../scenario.ned; \
 
 # Comment lines in the .ned file related to Dijkstra
 comment-dijkstra:
-	@sed -i 's|^import dspr.Dspr;|// import dspr.Dspr;|' ../scenarioNAC.ned
-	sed -i 's|^import dspr.NodeManager;|// import dspr.NodeManager;|' ../scenarioNAC.ned
-	sed -i 's|^        nodeManager: NodeManager;|        // nodeManager: NodeManager;|' ../scenarioNAC.ned
+	@sed -i 's|^import dspr.Dspr;|// import dspr.Dspr;|' ../scenario.ned
+	sed -i 's|^import dspr.NodeManager;|// import dspr.NodeManager;|' ../scenario.ned
+	sed -i 's|^        nodeManager: NodeManager;|        // nodeManager: NodeManager;|' ../scenario.ned
 
 
 # Run the greedy-forwarding-1hop communication range simulation on local PC.
