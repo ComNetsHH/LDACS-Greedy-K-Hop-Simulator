@@ -20,10 +20,10 @@ NUM_CPUS=10  # set to your no. of cores
 LOC_OMNET=https://github.com/omnetpp/omnetpp/releases/download/omnetpp-5.6.2/omnetpp-5.6.2-src-linux.tgz
 LOC_OMNET_MAC=https://github.com/omnetpp/omnetpp/releases/download/omnetpp-5.6.2/omnetpp-5.6.2-src-macosx.tgz
 LOC_INET=https://github.com/eltayebmusab/inet/archive/refs/tags/v4.2.5.tar.gz
-LOC_RADIO=https://zenodo.org/records/10995663/files/ComNetsHH/LDACS-Abstract-Radio-v1.0.5.zip
-LOC_TDMA=https://zenodo.org/records/10995658/files/ComNetsHH/LDACS-Abstract-TDMA-MAC-v1.0.5.zip
-LOC_GREEDY_ROUTING=https://zenodo.org/records/10995656/files/ComNetsHH/LDACS-Greedy-K-Hop-Routing-v1.0.5.zip
-LOC_DIJKSTRA_ROUTING=https://zenodo.org/records/10995656/files/ComNetsHH/LDACS-Dijkstra-v1.0.2.zip
+LOC_RADIO=https://zenodo.org/records/12826802/files/ComNetsHH/LDACS-Abstract-Radio-v1.0.5.zip
+LOC_TDMA=https://zenodo.org/records/12826801/files/ComNetsHH/LDACS-Abstract-TDMA-MAC-v1.0.5.zip
+LOC_GREEDY_ROUTING=https://zenodo.org/records/12826688/files/ComNetsHH/LDACS-Greedy-K-Hop-Routing-v1.0.5.zip
+LOC_DIJKSTRA_ROUTING=https://zenodo.org/records/12826320/files/ComNetsHH/LDACS-Dijkstra-v1.0.2.zip
 
 # Download OMNeT++ v5.6.2, unpack and go to directory.
 echo -n "Downloading OMNeT++ "
