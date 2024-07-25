@@ -292,15 +292,15 @@ greedy-forwarding-equipageFraction-random-m-6-A2G_csv:
 
 # Run the dijkstra routing equipage fraction simulation on local PC.
 dijkstra-equipageFraction-A2G:
-    make uncomment-dijkstra; \
+	make uncomment-dijkstra; \
 	opp_runall -j$(NUM_CPUS) $(SIM_BINARY_DIJKSTRA_RELEASE) ../scenario_equipage_fraction.ini -c $(DIJKSTRA) $(INCL_GREEDY); \
-    make comment-dijkstra 
+	make comment-dijkstra 
 
 # Debug the dijkstra equipage fraction simulation on local PC.
 dijkstra-equipageFraction-debug:
-    make uncomment-dijkstra; \
+	make uncomment-dijkstra; \
 	gdbgui --args $(SIM_BINARY_GREEDY_DBG) ../scenario_equipage_fraction.ini -u Cmdenv -c $(DIJKSTRA) $(INCL_GREEDY); \
-    make comment-dijkstra
+	make comment-dijkstra
 
 # Generate CSV files from results of the dijkstra equipage fraction simulation.
 dijkstra-equipageFraction_csv:
