@@ -17,6 +17,7 @@ The LDACS-Greedy-K-Hop-Simulator is an open-source simulation model developed to
 
 ## Components
 - **[LDACS Greedy K-Hop Routing](https://github.com/ComNetsHH/LDACS-Greedy-K-Hop-Routing)**: Implements the greedy routing algorithm with a subset of k-hop neighborhood information for efficient forwarding in sparse environments.
+- **[LDACS Dijkstra Routing](https://github.com/ComNetsHH/LDACS-Dijkstra)**: Implements the Dijkstra's shortest path routing algorithm which serves as the upper bound for the performance.
 - **[LDACS Abstract TDMA MAC](https://github.com/ComNetsHH/LDACS-Abstract-TDMA-MAC)**: Models an abstract LDACS air-to-air TDMA-based MAC protocol.
 - **[LDACS Abstract Radio](https://github.com/ComNetsHH/LDACS-Abstract-Radio)**: Abstract model of LDACS radio communications for accurate air-to-air transmission simulation.
 
@@ -66,10 +67,15 @@ You can execute these simulations either locally or on a High-Performance Comput
 #### Local Execution
 To run the simulations locally on your PC, use the following targets in the Makefile:
 
-- `greedy-forwarding-equipageFraction-A2G`: Runs the basic Greedy Forwarding simulation for different equipage fractions.
+- `greedy-forwarding-1hop-equipageFraction-A2G`: Runs the Greedy-1 simulation for different equipage fractions.
+- `greedy-forwarding-2hop-equipageFraction-A2G`: Runs the Greedy-2 simulation for different equipage fractions.
 - `greedy-forwarding-equipageFraction-fft-m-4-A2G`: Runs the Greedy-FFT algorithm with m=4.
 - `greedy-forwarding-equipageFraction-efft-m-4-A2G`: Runs the Greedy-EFFT algorithm with m=4.
 - `greedy-forwarding-equipageFraction-random-m-4-A2G`: Runs the Greedy-Random algorithm with m=4.
+- `greedy-forwarding-equipageFraction-fft-m-6-A2G`: Runs the Greedy-FFT algorithm with m=6.
+- `greedy-forwarding-equipageFraction-efft-m-6-A2G`: Runs the Greedy-EFFT algorithm with m=6.
+- `greedy-forwarding-equipageFraction-random-m-6-A2G`: Runs the Greedy-Random algorithm with m=6.
+- `dijkstra-equipageFraction-A2G`: Runs the Dijkstra algorithm.
 
 Similarly, add targets for m=6 variants if applicable.
 
