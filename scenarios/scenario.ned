@@ -25,6 +25,8 @@ import ned.DatarateChannel;
 import ldacs_abstract_tdma.scheduler.AbstractLdacsTdmaScheduler;
 import ldacs_abstract_radio.LdacsAbstractRadio;
 import greedy_forwarding.Greedy;
+// import dspr.Dspr;
+// import dspr.NodeManager;
 
 
 network scenarioRandom
@@ -63,6 +65,8 @@ network scenarioRandom
 
         groundStation[numGroundStations]: ManetRouter {
         }
+
+        // nodeManager: NodeManager;
 }
 
 network scenarioRandom_forwarding extends scenarioRandom
