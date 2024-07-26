@@ -140,13 +140,9 @@ greedy-forwarding-1hop-equipageFraction-A2G-debug:
 # Generate CSV files from results of the greedy-forwarding-1hop communication range simulation.
 greedy-forwarding-1hop-equipageFraction-A2G_csv:
 	cd simresults/scenario_EquipageFraction/$(GREEDY_FORWARDING_1HOP); \
-	echo -e "Generate csv files for greedy-forwarding scenario"; \
+	echo -e "Generate csv files for Greedy-1 scenario"; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:count")' -o packet_sent_count_multiapp.csv numAircrafts\=*.sca; \
 	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("packetReceived:count")' -o packet_received_count.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:sum(packetBytes)")' -o packet_sentBytes_sum.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("beaconSentBytes:sum")' -o beacon_sentBytes_sum.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("beaconSentCount:count")' -o beacon_sent_count.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("endToEndDelay:vector")' -o e2e_delay_vector.csv numAircrafts\=*.vec; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("hopCount:vector")' -o hop_count_vector.csv numAircrafts\=*.vec
 
 # Run the greedy-forwarding-2hop communication range simulation on local PC.
@@ -160,13 +156,9 @@ greedy-forwarding-2hop-equipageFraction-A2G-debug:
 # Generate CSV files from results of the greedy-forwarding-2hop communication range simulation.
 greedy-forwarding-2hop-equipageFraction-A2G_csv:
 	cd simresults/scenario_EquipageFraction/$(GREEDY_FORWARDING_2HOP); \
-	echo -e "Generate csv files for greedy-forwarding scenario"; \
+	echo -e "Generate csv files for Greedy-2 scenario"; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:count")' -o packet_sent_count_multiapp.csv numAircrafts\=*.sca; \
 	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("packetReceived:count")' -o packet_received_count.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:sum(packetBytes)")' -o packet_sentBytes_sum.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("beaconSentBytes:sum")' -o beacon_sentBytes_sum.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("beaconSentCount:count")' -o beacon_sent_count.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("endToEndDelay:vector")' -o e2e_delay_vector.csv numAircrafts\=*.vec; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("hopCount:vector")' -o hop_count_vector.csv numAircrafts\=*.vec
 
 # Run the greedy-forwarding using FFT with m=4 equipage fraction simulation on local PC.
@@ -180,13 +172,9 @@ greedy-forwarding-equipageFraction-fft-m-4-A2G-debug:
 # Generate CSV files from results of the greedy-forwarding using FFT with m=4 equipage fraction simulation.
 greedy-forwarding-equipageFraction-fft-m-4-A2G_csv:
 	cd simresults/scenario_EquipageFraction/$(GREEDY_FORWARDING_FFT_m_4); \
-	echo -e "Generate csv files for greedy-forwarding scenario"; \
+	echo -e "Generate csv files for Greedy-FF m=4 scenario"; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:count")' -o packet_sent_count_multiapp.csv numAircrafts\=*.sca; \
 	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("packetReceived:count")' -o packet_received_count.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:sum(packetBytes)")' -o packet_sentBytes_sum.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("beaconSentBytes:sum")' -o beacon_sentBytes_sum.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("beaconSentCount:count")' -o beacon_sent_count.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("endToEndDelay:vector")' -o e2e_delay_vector.csv numAircrafts\=*.vec; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("hopCount:vector")' -o hop_count_vector.csv numAircrafts\=*.vec
 
 # Run the greedy-forwarding using EFFT with m=4 equipage fraction simulation on local PC.
@@ -200,13 +188,9 @@ greedy-forwarding-equipageFraction-efft-m-4-A2G-debug:
 # Generate CSV files from results of the greedy-forwarding using EFFT with m=4 equipage fraction simulation.
 greedy-forwarding-equipageFraction-efft-m-4-A2G_csv:
 	cd simresults/scenario_EquipageFraction/$(GREEDY_FORWARDING_EFFT_m_4); \
-	echo -e "Generate csv files for greedy-forwarding scenario"; \
+	echo -e "Generate csv files for Greedy-EFF m=4 scenario"; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:count")' -o packet_sent_count_multiapp.csv numAircrafts\=*.sca; \
 	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("packetReceived:count")' -o packet_received_count.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:sum(packetBytes)")' -o packet_sentBytes_sum.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("beaconSentBytes:sum")' -o beacon_sentBytes_sum.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("beaconSentCount:count")' -o beacon_sent_count.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("endToEndDelay:vector")' -o e2e_delay_vector.csv numAircrafts\=*.vec; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("hopCount:vector")' -o hop_count_vector.csv numAircrafts\=*.vec
 
 # Run the greedy-forwarding using Random with m=4 equipage fraction simulation on local PC.
@@ -221,13 +205,9 @@ greedy-forwarding-equipageFraction-random-m-4-A2G-debug:
 
 greedy-forwarding-equipageFraction-random-m-4-A2G_csv:
 	cd simresults/scenario_EquipageFraction/$(GREEDY_FORWARDING_RANDOM_m_4); \
-	echo -e "Generate csv files for greedy-forwarding scenario"; \
+	echo -e "Generate csv files for Greedy-Random m=4 scenario"; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:count")' -o packet_sent_count_multiapp.csv numAircrafts\=*.sca; \
 	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("packetReceived:count")' -o packet_received_count.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:sum(packetBytes)")' -o packet_sentBytes_sum.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("beaconSentBytes:sum")' -o beacon_sentBytes_sum.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("beaconSentCount:count")' -o beacon_sent_count.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("endToEndDelay:vector")' -o e2e_delay_vector.csv numAircrafts\=*.vec; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("hopCount:vector")' -o hop_count_vector.csv numAircrafts\=*.vec
 
 # Run the greedy-forwarding using FFT with m=6 equipage fraction simulation on local PC.
@@ -241,13 +221,9 @@ greedy-forwarding-equipageFraction-fft-m-6-A2G-debug:
 # Generate CSV files from results of the greedy-forwarding using FFT with m=6 equipage fraction simulation.
 greedy-forwarding-equipageFraction-fft-m-6-A2G_csv:
 	cd simresults/scenario_EquipageFraction/$(GREEDY_FORWARDING_FFT_m_6); \
-	echo -e "Generate csv files for greedy-forwarding scenario"; \
+	echo -e "Generate csv files for Greedy-FF m=6 scenario"; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:count")' -o packet_sent_count_multiapp.csv numAircrafts\=*.sca; \
 	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("packetReceived:count")' -o packet_received_count.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:sum(packetBytes)")' -o packet_sentBytes_sum.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("beaconSentBytes:sum")' -o beacon_sentBytes_sum.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("beaconSentCount:count")' -o beacon_sent_count.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("endToEndDelay:vector")' -o e2e_delay_vector.csv numAircrafts\=*.vec; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("hopCount:vector")' -o hop_count_vector.csv numAircrafts\=*.vec
 
 # Run the greedy-forwarding using EFFT with m=6 equipage fraction simulation on local PC.
@@ -261,13 +237,9 @@ greedy-forwarding-equipageFraction-efft-m-6-A2G-debug:
 # Generate CSV files from results of the greedy-forwarding using EFFT with m=6 equipage fraction simulation.
 greedy-forwarding-equipageFraction-efft-m-6-A2G_csv:
 	cd simresults/scenario_EquipageFraction/$(GREEDY_FORWARDING_EFFT_m_6); \
-	echo -e "Generate csv files for greedy-forwarding scenario"; \
+	echo -e "Generate csv files for Greedy-EFF m=6 scenario"; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:count")' -o packet_sent_count_multiapp.csv numAircrafts\=*.sca; \
 	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("packetReceived:count")' -o packet_received_count.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:sum(packetBytes)")' -o packet_sentBytes_sum.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("beaconSentBytes:sum")' -o beacon_sentBytes_sum.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("beaconSentCount:count")' -o beacon_sent_count.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("endToEndDelay:vector")' -o e2e_delay_vector.csv numAircrafts\=*.vec; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("hopCount:vector")' -o hop_count_vector.csv numAircrafts\=*.vec
 
 # Run the greedy-forwarding using Random with m=6 equipage fraction simulation on local PC.
@@ -281,13 +253,9 @@ greedy-forwarding-equipageFraction-random-m-6-A2G-debug:
 # Generate CSV files from results of the greedy-forwarding using Random with m=6 equipage fraction simulation.
 greedy-forwarding-equipageFraction-random-m-6-A2G_csv:
 	cd simresults/scenario_EquipageFraction/$(GREEDY_FORWARDING_RANDOM_m_6); \
-	echo -e "Generate csv files for greedy-forwarding scenario"; \
+	echo -e "Generate csv files for Greedy-Random m=6 scenario"; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:count")' -o packet_sent_count_multiapp.csv numAircrafts\=*.sca; \
 	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("packetReceived:count")' -o packet_received_count.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].app[*]) AND name("packetSent:sum(packetBytes)")' -o packet_sentBytes_sum.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("beaconSentBytes:sum")' -o beacon_sentBytes_sum.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("beaconSentCount:count")' -o beacon_sent_count.csv numAircrafts\=*.sca; \
-	scavetool export -f 'module(scenarioRandom_forwarding.groundStation[0].app[0]) AND name("endToEndDelay:vector")' -o e2e_delay_vector.csv numAircrafts\=*.vec; \
 	scavetool export -f 'module(scenarioRandom_forwarding.aircraft[*].routing) AND name("hopCount:vector")' -o hop_count_vector.csv numAircrafts\=*.vec
 
 # Run the dijkstra routing equipage fraction simulation on local PC.
